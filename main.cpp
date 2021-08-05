@@ -71,7 +71,6 @@ int main(int argc, char* argv[]) {
         struct libnet_arp_hdr* arpHeader = (struct libnet_arp_hdr*)(packet + sizeof(struct libnet_ethernet_hdr));
         if(htons(ethHeader->ether_type)==2054 && htons(arpHeader->ar_op)==2){
             target_mac = ethHeader->ether_shost;
-            printf("%s\n",mac(target_mac));
             break;
         }
     }
