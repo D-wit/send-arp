@@ -8,8 +8,8 @@
 #include "transceive_arp.h"
 
 void usage() {
-	printf("syntax: send-arp-test <interface>\n");
-	printf("sample: send-arp-test wlan0\n");
+    printf("syntax: send-arp-test <interface> <sender ip> <target ip>\n");
+    printf("sample: send-arp-test eth0 192.168.50.94 192.168.50.1\n");
 }
 
 
@@ -22,7 +22,7 @@ const char* mac(uint8_t* macAddr)
 
 
 int main(int argc, char* argv[]) {
-    if (argc <= 2) {
+    if (argc != 4) {
 		usage();
 		return -1;
 	}
